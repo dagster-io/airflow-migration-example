@@ -1,4 +1,4 @@
-from dagster import AssetKey, repository
+from dagster import AssetKey
 
 from dagster_airflow import load_assets_from_airflow_dag
 
@@ -14,7 +14,3 @@ migration_assets = load_assets_from_airflow_dag(
         AssetKey("airflow_top_stories"): {AssetKey("airflow_top_story_ids")}
     }
 )
-
-@repository
-def lift_and_shift_dags():
-    return [migration_assets]
