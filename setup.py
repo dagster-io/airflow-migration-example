@@ -10,6 +10,11 @@ setup(
         # for the kubernetes operator
         "apache-airflow-providers-cncf-kubernetes>=4.4.0",
         "apache-airflow-providers-docker>=3.1.0",
+        # for the airflow dag code
+        "pendulum",
+        "pandas",
+        "boto3",
+        "dagster_aws",
     ],
     extras_require={"dev": ["dagit", "pytest"]},
 )
