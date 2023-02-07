@@ -1,10 +1,10 @@
-import requests
-
 from dagster import AssetKey, asset
 
 from dagster_airflow import load_assets_from_airflow_dag
 
-from with_airflow.airflow_migration_dag_int import migration_dag
+from with_airflow.airflow_migration_dag import migration_dag
+
+import requests
 
 @asset(
     io_manager_key="migration_io_manager",
@@ -18,9 +18,9 @@ def top_story_ids():
 migration_assets = load_assets_from_airflow_dag(
     migration_dag,
     task_ids_by_asset_key={
-        AssetKey("top_stories"): {"load_top_stories"}
+        AssetKey("airflow_top_stories"): {"load_top_stories"}
     },
     upstream_dependencies_by_asset_key={
-        AssetKey("top_stories"): {AssetKey("top_story_ids")}
+        AssetKey("airflow_top_stories"): {AssetKey("top_story_ids")}
     }
 )
