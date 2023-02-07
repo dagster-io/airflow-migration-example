@@ -3,7 +3,7 @@ import pandas as pd
 
 from dagster import asset
 @asset(
-    io_manager_key="migration_io_manager",
+    # io_manager_key="migration_io_manager",
 )
 def top_story_ids():
     newstories_url = "https://hacker-news.firebaseio.com/v0/topstories.json"
@@ -11,7 +11,7 @@ def top_story_ids():
     return top_10_newstories
 
 @asset(
-    io_manager_key="migration_io_manager"
+    # io_manager_key="migration_io_manager"
 )
 def top_stories(top_story_ids):
     results = []
