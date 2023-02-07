@@ -5,7 +5,8 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: "pip install --upgrade pip && pip install -e '.[dev]'"
+  - before: "pip install --upgrade pip && pip install -e '.[dev]'"
+    init: airflow db init
     command: dagster dev
 
 ports:
