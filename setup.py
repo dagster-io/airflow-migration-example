@@ -7,7 +7,7 @@ setup(
         "dagster",
         "dagster_airflow",
         "dagster_aws",
-        "apache-airflow==2.6.2",
+        "apache-airflow==2.7.1",
         # for the kubernetes operator
         "apache-airflow-providers-cncf-kubernetes>=4.4.0",
         "apache-airflow-providers-docker>=3.1.0",
